@@ -1,11 +1,8 @@
-package com.landa44.simplerpg.controllers;
+package com.landa44.simplerpg.hero;
 
-import com.landa44.simplerpg.models.Hero;
-import com.landa44.simplerpg.services.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

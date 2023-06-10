@@ -1,10 +1,9 @@
-package com.landa44.simplerpg.services;
-import com.landa44.simplerpg.models.Hero;
-import com.landa44.simplerpg.repositories.HeroRepository;
+package com.landa44.simplerpg.hero;
+import com.landa44.simplerpg.hero.Hero;
+import com.landa44.simplerpg.hero.HeroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
