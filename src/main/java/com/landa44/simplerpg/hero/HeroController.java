@@ -23,4 +23,9 @@ public class  HeroController {
     public void registerNewHero(@RequestBody Hero hero){
         heroService.addNewHero(hero);
     }
+
+    @GetMapping("/{id}")
+    public Hero getHero(@PathVariable Long id){
+        return heroService.getHero(id);
+    }
 }
