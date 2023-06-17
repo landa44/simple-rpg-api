@@ -22,10 +22,13 @@ public class Item {
     private Integer attack;
 
     private Integer defense;
-    public Item(String name, Integer attack, Integer defense) {
+    private Double price;
+
+    public Item(String name, Integer attack, Integer defense, double price) {
         this.name = name;
         this.attack = attack;
         this.defense = defense;
+        this.price = price;
     }
 
     public long getId() {
@@ -54,6 +57,14 @@ public class Item {
 
     public void setDefense(Integer defense) {
         this.defense = defense;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     @Override

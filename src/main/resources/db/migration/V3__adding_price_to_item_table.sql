@@ -1,0 +1,2 @@
+ALTER TABLE item
+ADD price DECIMAL(10, 2);
