@@ -1,6 +1,9 @@
 package com.landa44.simplerpg.hero;
 
+import com.landa44.simplerpg.item.Item;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table
@@ -20,16 +23,9 @@ public class Hero {
     private Integer life;
     private Integer attack;
     private Integer defense;
-
     private Integer mana;
-
-    public Integer getMana() {
-        return mana;
-    }
-
-    public void setMana(Integer mana) {
-        this.mana = mana;
-    }
+    @OneToMany(mappedBy = "hero", cascade = CascadeType.ALL)
+    private List<Item> items;
 
     public Hero() {
     }
@@ -89,6 +85,14 @@ public class Hero {
 
     public void setDefense(Integer defense) {
         this.defense = defense;
+    }
+
+    public Integer getMana() {
+        return mana;
+    }
+
+    public void setMana(Integer mana) {
+        this.mana = mana;
     }
 
     @Override

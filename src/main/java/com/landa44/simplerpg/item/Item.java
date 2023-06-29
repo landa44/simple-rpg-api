@@ -1,5 +1,6 @@
 package com.landa44.simplerpg.item;
 
+import com.landa44.simplerpg.hero.Hero;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,13 +17,13 @@ public class Item {
             generator = "hero_sequence"
     )
     private long id;
-
     private String name;
-
     private Integer attack;
-
     private Integer defense;
     private Double price;
+    @ManyToOne
+    @JoinColumn(name="hero_id")
+    private Hero hero;
 
     public Item(String name, Integer attack, Integer defense, double price) {
         this.name = name;
@@ -65,6 +66,14 @@ public class Item {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Hero getHero() {
+        return hero;
+    }
+
+    public void setHero(Hero hero) {
+        this.hero = hero;
     }
 
     @Override
