@@ -1,4 +1,4 @@
-package com.landa44.simplerpg.hero;
+package com.landa44.simplerpg.models;
 
 import jakarta.persistence.*;
 
@@ -21,16 +21,6 @@ public class Hero {
     private Integer attack;
     private Integer defense;
 
-    private Integer mana;
-
-    public Integer getMana() {
-        return mana;
-    }
-
-    public void setMana(Integer mana) {
-        this.mana = mana;
-    }
-
     public Hero() {
     }
 
@@ -40,7 +30,6 @@ public class Hero {
         this.life = life;
         this.attack = attack;
         this.defense = defense;
-        this.mana = 20;
     }
 
     public Hero(String name, Integer life, Integer attack, Integer defense) {
@@ -48,7 +37,6 @@ public class Hero {
         this.life = life;
         this.attack = attack;
         this.defense = defense;
-        this.mana = 20;
     }
 
     public Long getId() {
