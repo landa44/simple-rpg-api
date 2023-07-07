@@ -1,6 +1,0 @@
-ALTER TABLE item
-ADD COLUMN hero_id INT;
-
-ALTER TABLE item
-ADD CONSTRAINT fk_hero
-FOREIGN KEY (hero_id) REFERENCES Hero(id);
