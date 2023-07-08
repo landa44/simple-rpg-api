@@ -1,6 +1,7 @@
 name: RPG API CI
 
 on:
+  push:
   pull_request:
     branches: [ "main" ]
 
