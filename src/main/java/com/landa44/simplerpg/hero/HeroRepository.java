@@ -1,6 +1,5 @@
-package com.landa44.simplerpg.repositories;
+package com.landa44.simplerpg.hero;
 
-import com.landa44.simplerpg.models.Hero;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
