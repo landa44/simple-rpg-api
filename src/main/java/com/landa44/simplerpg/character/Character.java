@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+/**
+ * Characther represent all type of entities in the game Ex: hereos and enemies.
+ */
 @Entity
 @Table(name = "characters")
 public class Character {
@@ -45,9 +48,9 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character{" +
-            "id=" + id +
-            ", name='" + name + '\'' +
-            '}';
+        return "Character{"
+            + "id=" + id
+            + ", name='" + name + '\''
+            + '}';
     }
 }

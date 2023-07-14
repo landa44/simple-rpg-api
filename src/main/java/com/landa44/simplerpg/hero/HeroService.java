@@ -1,11 +1,14 @@
 package com.landa44.simplerpg.hero;
 
 import com.landa44.simplerpg.character.CharacterRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+/**
+ * Service class that provides operations related to Hero management.
+ */
 @Service
 public class HeroService {
     private final HeroRepository heroRepository;
@@ -17,11 +20,11 @@ public class HeroService {
         this.characterRepository = characterRepository;
     }
 
-    public List<Hero> getHeroes(){
+    public List<Hero> getHeroes() {
         return heroRepository.findAll();
     }
 
-    public void addNewHero(Hero hero){
+    public void addNewHero(Hero hero) {
         characterRepository.save(hero.getCharacter());
         heroRepository.save(hero);
     }

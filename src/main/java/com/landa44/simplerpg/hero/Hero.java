@@ -10,6 +10,9 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
+/**
+ * Hero class represents the playable characters.
+ */
 @Entity
 @Table(name = "heroes")
 public class Hero {
@@ -34,12 +37,6 @@ public class Hero {
 
     public Hero(Character character) {
         this.money = 50;
-        this.character = character;
-    }
-
-    public Hero(Long id, int money, Character character) {
-        this.id = id;
-        this.money = money;
         this.character = character;
     }
 
@@ -69,10 +66,10 @@ public class Hero {
 
     @Override
     public String toString() {
-        return "Hero{" +
-            "id=" + id +
-            ", money=" + money +
-            ", character=" + character +
-            '}';
+        return "Hero{"
+            + "id=" + id
+            + ", money=" + money
+            + ", character=" + character
+            + '}';
     }
 }
