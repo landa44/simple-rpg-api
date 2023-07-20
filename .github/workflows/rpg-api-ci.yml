@@ -46,6 +46,11 @@ jobs:
           compose-file: "./docker-compose.yml"
           up-flags: "--remove-orphans"
           down-flags: "--remove-orphans"
+          environment: |
+            DB_NAME=${{secrets.DB_NAME}}
+            DB_USERNAME=${{secrets.DB_USERNAME}}
+            DB_PASSWORD=${{secrets.DB_PASSWORD}}
+            DB_URL=${{secrets.DB_URL}}
           services: |
             postgres
       - name: Set up JDK 17
