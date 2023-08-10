@@ -1,4 +1,4 @@
-package com.landa44.simplerpg.hero;
+package com.landa44.simplerpg.enemy;
 
 import com.landa44.simplerpg.character.Character;
 import jakarta.persistence.CascadeType;
@@ -12,32 +12,30 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 /**
- * Hero class represents the playable characters.
+ * Enemy class represents the playable characters.
  */
 @Entity
-@Table(name = "heroes")
-public class Hero {
+@Table(name = "enemies")
+public class Enemy {
     @Id
     @SequenceGenerator(
-        name = "hero_sequence",
-        sequenceName = "hero_sequence",
+        name = "enemy_sequence",
+        sequenceName = "enemy_sequence",
         allocationSize = 1
     )
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE,
-        generator = "hero_sequence"
+        generator = "enemy_sequence"
     )
     private Long id;
-    private int money;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "character_id")
     private Character character;
 
-    public Hero() {
+    public Enemy() {
     }
 
-    public Hero(Character character) {
-        this.money = 50;
+    public Enemy(Character character) {
         this.character = character;
     }
 
@@ -47,14 +45,6 @@ public class Hero {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
     }
 
     public Character getCharacter() {
@@ -67,9 +57,8 @@ public class Hero {
 
     @Override
     public String toString() {
-        return "Hero{"
+        return "Enemy{"
             + "id=" + id
-            + ", money=" + money
             + ", character=" + character
             + '}';
     }

@@ -1,6 +1,7 @@
 package com.landa44.simplerpg.hero;
 
 import com.landa44.simplerpg.character.CharacterRepository;
+import com.landa44.simplerpg.hero.exception.HeroNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,19 @@ public class HeroService {
 
     public Hero getHero(Long id) {
         Optional<Hero> optionalHero = heroRepository.findById(id);
-        return optionalHero.orElse(null);
+
+        return optionalHero.orElseThrow(() -> new HeroNotFoundException(
+            "Hero with id:" + id + " does not exist"
+        ));
+    }
+
+    public void deleteHero(Long id) {
+        if(!heroRepository.existsById(id)){
+            throw  new HeroNotFoundException(
+                "Hero with id:" + id + " does not exist"
+            );
+        }
+
+        heroRepository.deleteById(id);
     }
 }

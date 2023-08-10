@@ -9,3 +9,7 @@ CREATE TABLE heroes (
   character INTEGER REFERENCES characters(id)
 );
 
+CREATE TABLE enemies (
+  id SERIAL PRIMARY KEY,
+  character INTEGER REFERENCES characters(id)
+);

@@ -1,4 +1,4 @@
-package com.landa44.simplerpg.hero;
+package com.landa44.simplerpg.enemy;
 
 import com.landa44.simplerpg.character.Character;
 import java.util.List;
@@ -12,35 +12,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Controller class for managing hero-related API endpoints.
+ * Controller class for managing Enemy-related API endpoints.
  */
 @RestController
-@RequestMapping(path = "rpg/v1/heroes")
-public class  HeroController {
-    private final HeroService heroService;
+@RequestMapping(path = "rpg/v1/enemies")
+public class  EnemyController {
+    private final EnemyService EnemyService;
 
     @Autowired
-    public HeroController(HeroService heroService) {
-        this.heroService = heroService;
+    public EnemyController(EnemyService EnemyService) {
+        this.EnemyService = EnemyService;
     }
 
     @GetMapping
-    public List<Hero> getHeroes() {
-        return heroService.getHeroes();
+    public List<Enemy> getEnemies() {
+        return EnemyService.getEnemies();
     }
 
     @PostMapping
-    public void registerNewHero(@RequestBody Character character) {
-        heroService.addNewHero(new Hero(character));
+    public void registerNewEnemy(@RequestBody Character character) {
+        EnemyService.addNewEnemy(new Enemy(character));
     }
 
     @GetMapping("/{id}")
-    public Hero getHero(@PathVariable Long id) {
-        return heroService.getHero(id);
+    public Enemy getEnemy(@PathVariable Long id) {
+        return EnemyService.getEnemy(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteHero(@PathVariable Long id) {
-        heroService.deleteHero(id);
+    public void deleteEnemy(@PathVariable Long id) {
+        EnemyService.deleteEnemy(id);
     }
 }
