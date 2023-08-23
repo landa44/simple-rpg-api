@@ -1,5 +1,6 @@
 package com.landa44.simplerpg.enemy;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.landa44.simplerpg.character.Character;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -16,6 +17,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "enemies")
+@JsonSerialize(using = EnemySerializer.class)
 public class Enemy {
     @Id
     @SequenceGenerator(

@@ -1,6 +1,7 @@
 package com.landa44.simplerpg.enemy;
 
 import com.landa44.simplerpg.character.CharacterRepository;
+import com.landa44.simplerpg.character.CharacterService;
 import com.landa44.simplerpg.enemy.exception.EnemyNotFoundException;
 import java.util.List;
 import java.util.Optional;
@@ -13,12 +14,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class EnemyService {
     private final EnemyRepository enemyRepository;
-    private final CharacterRepository characterRepository;
-
+    private final CharacterService characterService;
     @Autowired
-    public EnemyService(EnemyRepository enemyRepository, CharacterRepository characterRepository) {
+    public EnemyService(EnemyRepository enemyRepository,
+                        CharacterService characterService) {
         this.enemyRepository = enemyRepository;
-        this.characterRepository = characterRepository;
+        this.characterService = characterService;
     }
 
     public List<Enemy> getEnemies() {
@@ -26,7 +27,7 @@ public class EnemyService {
     }
 
     public void addNewEnemy(Enemy enemy) {
-        characterRepository.save(enemy.getCharacter());
+        characterService.addCharacter(enemy.getCharacter());
         enemyRepository.save(enemy);
     }
 

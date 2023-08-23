@@ -1,11 +1,17 @@
 package com.landa44.simplerpg.character;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.landa44.simplerpg.character.attribute.CharacterAttributes;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Characther represent all type of entities in the game Ex: hereos and enemies.
@@ -25,6 +31,8 @@ public class Character {
     )
     private Long id;
     private String name;
+    @OneToMany(mappedBy = "character", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CharacterAttributes> attributes = new ArrayList<>();
 
     public Character() {
     }
@@ -46,11 +54,16 @@ public class Character {
         this.name = name;
     }
 
+    public List<CharacterAttributes> getAttributes() {
+        return attributes;
+    }
+
     @Override
     public String toString() {
-        return "Character{"
-            + "id=" + id
-            + ", name='" + name + '\''
-            + '}';
+        return "Character{" +
+            "id=" + id +
+            ", name='" + name +
+            ", attributes=" + attributes +
+            '}';
     }
 }

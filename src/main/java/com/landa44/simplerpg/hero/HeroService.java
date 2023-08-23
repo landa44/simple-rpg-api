@@ -1,6 +1,7 @@
 package com.landa44.simplerpg.hero;
 
 import com.landa44.simplerpg.character.CharacterRepository;
+import com.landa44.simplerpg.character.CharacterService;
 import com.landa44.simplerpg.hero.exception.HeroNotFoundException;
 import java.util.List;
 import java.util.Optional;
@@ -13,12 +14,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class HeroService {
     private final HeroRepository heroRepository;
-    private final CharacterRepository characterRepository;
+    private final CharacterService characterService;
 
     @Autowired
-    public HeroService(HeroRepository heroRepository, CharacterRepository characterRepository) {
+    public HeroService(HeroRepository heroRepository,
+                       CharacterService characterService) {
         this.heroRepository = heroRepository;
-        this.characterRepository = characterRepository;
+        this.characterService = characterService;
     }
 
     public List<Hero> getHeroes() {
@@ -26,7 +28,7 @@ public class HeroService {
     }
 
     public void addNewHero(Hero hero) {
-        characterRepository.save(hero.getCharacter());
+        characterService.addCharacter(hero.getCharacter());
         heroRepository.save(hero);
     }
 

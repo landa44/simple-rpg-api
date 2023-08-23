@@ -1,6 +1,5 @@
 package com.landa44.simplerpg.character;
 
-import com.landa44.simplerpg.hero.Hero;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +20,7 @@ public class CharacterController {
     }
 
     @GetMapping
-    public List<Character> getHeroes() {
+    public List<Character> getCharacters() {
         return characterService.getCharacters();
     }
 }
