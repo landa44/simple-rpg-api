@@ -7,9 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Service class that provides operations related to Characters management.
- */
 @Service
 public class CharacterService {
     private final CharacterRepository characterRepository;
@@ -31,8 +28,14 @@ public class CharacterService {
 
     public void addCharacter(Character character) {
         characterRepository.save(character);
-        characterAttributesRepository.save(new CharacterAttributes(100, attributeService.getLifeAttribute(), character));
-        characterAttributesRepository.save(new CharacterAttributes(50, attributeService.getStrengthAttribute(), character));
-        characterAttributesRepository.save(new CharacterAttributes(50, attributeService.getManaAttribute(), character));
+        characterAttributesRepository.save(
+            new CharacterAttributes(100, attributeService.getLifeAttribute(), character)
+        );
+        characterAttributesRepository.save(
+            new CharacterAttributes(50, attributeService.getStrengthAttribute(), character)
+        );
+        characterAttributesRepository.save(
+            new CharacterAttributes(50, attributeService.getManaAttribute(), character)
+        );
     }
 }

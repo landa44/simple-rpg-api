@@ -2,7 +2,6 @@ package com.landa44.simplerpg.hero;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.landa44.simplerpg.character.Character;
-import com.landa44.simplerpg.enemy.HeroSerializer;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

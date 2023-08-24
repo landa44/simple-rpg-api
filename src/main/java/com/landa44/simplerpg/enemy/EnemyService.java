@@ -8,13 +8,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Service class that provides operations related to Enemy management.
- */
 @Service
 public class EnemyService {
     private final EnemyRepository enemyRepository;
     private final CharacterService characterService;
+
     @Autowired
     public EnemyService(EnemyRepository enemyRepository,
                         CharacterService characterService) {
@@ -40,7 +38,7 @@ public class EnemyService {
     }
 
     public void deleteEnemy(Long id) {
-        if(!enemyRepository.existsById(id)){
+        if (!enemyRepository.existsById(id)) {
             throw  new EnemyNotFoundException(
                 "Enemy with id:" + id + " does not exist"
             );

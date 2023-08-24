@@ -6,11 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Controller class for the attributes.
- */
 @RestController
-@RequestMapping(path="rpg/v1/attributes")
+@RequestMapping(path = "rpg/v1/attributes")
 public class AttributeController {
     private final AttributeService attributeService;
 

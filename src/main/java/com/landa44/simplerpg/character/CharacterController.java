@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Controller class for managing character-related API endpoints.
- */
 @RestController
 @RequestMapping(path = "rpg/v1/characters")
 public class CharacterController {

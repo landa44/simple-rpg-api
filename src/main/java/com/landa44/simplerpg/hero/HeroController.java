@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Controller class for managing hero-related API endpoints.
- */
 @RestController
 @RequestMapping(path = "rpg/v1/heroes")
 public class  HeroController {

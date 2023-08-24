@@ -8,9 +8,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Service class that provides operations related to Hero management.
- */
 @Service
 public class HeroService {
     private final HeroRepository heroRepository;
@@ -41,8 +38,8 @@ public class HeroService {
     }
 
     public void deleteHero(Long id) {
-        if(!heroRepository.existsById(id)){
-            throw  new HeroNotFoundException(
+        if (!heroRepository.existsById(id)) {
+            throw new HeroNotFoundException(
                 "Hero with id:" + id + " does not exist"
             );
         }

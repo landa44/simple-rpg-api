@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Characther represent all type of entities in the game Ex: hereos and enemies.
+ * Character represent all type of entities in the game Ex: hereos and enemies.
  */
 @Entity
 @Table(name = "characters")
@@ -60,10 +60,10 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character{" +
-            "id=" + id +
-            ", name='" + name +
-            ", attributes=" + attributes +
-            '}';
+        return "Character{"
+            + "id=" + id
+            + ", name='" + name
+            + ", attributes=" + attributes
+            + '}';
     }
 }

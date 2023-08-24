@@ -5,8 +5,7 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 
-public class CharaterAttributesSerializer extends JsonSerializer<CharacterAttributes> {
-
+public class CharacterAttributesSerializer extends JsonSerializer<CharacterAttributes> {
     @Override
     public void serialize(CharacterAttributes value, JsonGenerator gen,
                           SerializerProvider serializers) throws IOException {

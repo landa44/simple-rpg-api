@@ -1,11 +1,9 @@
 package com.landa44.simplerpg.character.attribute;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.landa44.simplerpg.attribute.Attribute;
 import com.landa44.simplerpg.character.Character;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,11 +13,12 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 /**
- * A class to store the value of the character's attributes
+ * A class to store the value of the character's attributes.
+ * Represents the relationship between character and attribute.
  */
 @Entity
-@Table(name="character_attributes")
-@JsonSerialize(using = CharaterAttributesSerializer.class)
+@Table(name = "character_attributes")
+@JsonSerialize(using = CharacterAttributesSerializer.class)
 public class CharacterAttributes {
     @Id
     @SequenceGenerator(
@@ -87,9 +86,9 @@ public class CharacterAttributes {
 
     @Override
     public String toString() {
-        return "CharacterAttributes{" +
-            "attribute=" + attribute.getName() +
-            ", value=" + value +
-            '}';
+        return "CharacterAttributes{"
+            + "attribute=" + attribute.getName()
+            + ", value=" + value
+            + '}';
     }
 }

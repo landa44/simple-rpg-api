@@ -4,9 +4,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Service class that provides operations related to Attributes
- */
 @Service
 public class AttributeService {
     private final AttributeRepository attributeRepository;

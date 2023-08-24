@@ -11,36 +11,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Controller class for managing Enemy-related API endpoints.
- */
 @RestController
 @RequestMapping(path = "rpg/v1/enemies")
 public class  EnemyController {
-    private final EnemyService EnemyService;
+    private final EnemyService enemyService;
 
     @Autowired
-    public EnemyController(EnemyService EnemyService) {
-        this.EnemyService = EnemyService;
+    public EnemyController(EnemyService enemyService) {
+        this.enemyService = enemyService;
     }
 
     @GetMapping
     public List<Enemy> getEnemies() {
-        return EnemyService.getEnemies();
+        return enemyService.getEnemies();
     }
 
     @PostMapping
     public void registerNewEnemy(@RequestBody Character character) {
-        EnemyService.addNewEnemy(new Enemy(character));
+        enemyService.addNewEnemy(new Enemy(character));
     }
 
     @GetMapping("/{id}")
     public Enemy getEnemy(@PathVariable Long id) {
-        return EnemyService.getEnemy(id);
+        return enemyService.getEnemy(id);
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteEnemy(@PathVariable Long id) {
-        EnemyService.deleteEnemy(id);
+        enemyService.deleteEnemy(id);
     }
 }

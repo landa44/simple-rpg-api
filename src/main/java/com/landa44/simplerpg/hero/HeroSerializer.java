@@ -1,4 +1,4 @@
-package com.landa44.simplerpg.enemy;
+package com.landa44.simplerpg.hero;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

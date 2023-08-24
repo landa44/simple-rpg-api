@@ -13,7 +13,7 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 /**
- * Enemy class represents the playable characters.
+ * Enemy class represents the non-playable characters.
  */
 @Entity
 @Table(name = "enemies")
