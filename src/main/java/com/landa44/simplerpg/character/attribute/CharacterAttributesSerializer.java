@@ -14,7 +14,7 @@ public class CharacterAttributesSerializer extends JsonSerializer<CharacterAttri
                           SerializerProvider serializers) throws IOException {
         gen.writeStartObject();
 
-        gen.writeStringField("attribute", value.getAttribute().getName());
+        gen.writeStringField("attribute", value.getAttribute().toString());
         gen.writeNumberField("value", value.getValue());
 
         gen.writeEndObject();

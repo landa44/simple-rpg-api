@@ -1,7 +1,7 @@
 package com.landa44.simplerpg.character;
 
 //local dependencies
-import com.landa44.simplerpg.attribute.AttributeService;
+import com.landa44.simplerpg.attribute.Attribute;
 import com.landa44.simplerpg.character.attribute.CharacterAttributes;
 import com.landa44.simplerpg.character.attribute.CharacterAttributesRepository;
 
@@ -15,15 +15,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CharacterService {
     private final CharacterRepository characterRepository;
-    private final AttributeService attributeService;
     private final CharacterAttributesRepository characterAttributesRepository;
 
     @Autowired
     public CharacterService(CharacterRepository characterRepository,
-                            AttributeService attributeService,
                             CharacterAttributesRepository characterAttributesRepository) {
         this.characterRepository = characterRepository;
-        this.attributeService = attributeService;
         this.characterAttributesRepository = characterAttributesRepository;
     }
 
@@ -34,13 +31,13 @@ public class CharacterService {
     public void addCharacter(Character character) {
         characterRepository.save(character);
         characterAttributesRepository.save(
-            new CharacterAttributes(100, attributeService.getLifeAttribute(), character)
+            new CharacterAttributes(100, Attribute.Live, character)
         );
         characterAttributesRepository.save(
-            new CharacterAttributes(50, attributeService.getStrengthAttribute(), character)
+            new CharacterAttributes(50, Attribute.Strength, character)
         );
         characterAttributesRepository.save(
-            new CharacterAttributes(50, attributeService.getManaAttribute(), character)
+            new CharacterAttributes(50, Attribute.Mana, character)
         );
     }
 }
