@@ -1,6 +1,6 @@
 CREATE TABLE characters (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(100)
+  name VARCHAR(100) UNIQUE NOT NULL
 );
 
 CREATE TABLE heroes (
@@ -16,7 +16,7 @@ CREATE TABLE enemies (
 
 CREATE TABLE attributes (
    id SERIAL PRIMARY KEY,
-   name VARCHAR(100)
+   name VARCHAR(100) UNIQUE NOT NULL
 );
 
 INSERT INTO attributes (name) VALUES ('Live'), ('Strength'), ('Mana');
