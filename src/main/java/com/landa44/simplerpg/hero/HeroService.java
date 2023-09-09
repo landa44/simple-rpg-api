@@ -1,10 +1,14 @@
 package com.landa44.simplerpg.hero;
 
-import com.landa44.simplerpg.character.CharacterRepository;
+//local dependencies
 import com.landa44.simplerpg.character.CharacterService;
 import com.landa44.simplerpg.hero.exception.HeroNotFoundException;
+
+//java dependencies
 import java.util.List;
 import java.util.Optional;
+
+//spring dependencies
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

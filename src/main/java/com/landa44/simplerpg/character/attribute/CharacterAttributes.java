@@ -1,8 +1,11 @@
 package com.landa44.simplerpg.character.attribute;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+//local dependencies
 import com.landa44.simplerpg.attribute.Attribute;
 import com.landa44.simplerpg.character.Character;
+
+//external dependencies
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

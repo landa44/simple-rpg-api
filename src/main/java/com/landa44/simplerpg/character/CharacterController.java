@@ -1,6 +1,9 @@
 package com.landa44.simplerpg.character;
 
+//java dependencies
 import java.util.List;
+
+//spring dependencies
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

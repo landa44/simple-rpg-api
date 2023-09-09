@@ -1,5 +1,6 @@
 package com.landa44.simplerpg.attribute;
 
+//external dependencies
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

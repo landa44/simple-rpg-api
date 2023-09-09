@@ -1,5 +1,6 @@
 package com.landa44.simplerpg.hero.exception;
 
+//spring dependencies
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

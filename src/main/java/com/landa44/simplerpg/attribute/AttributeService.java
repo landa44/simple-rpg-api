@@ -1,6 +1,9 @@
 package com.landa44.simplerpg.attribute;
 
+//java dependencies
 import java.util.List;
+
+//spring dependencies
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

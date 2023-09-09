@@ -1,7 +1,10 @@
 package com.landa44.simplerpg.character;
 
-import com.fasterxml.jackson.core.JsonGenerator;
+//java dependencies
 import java.io.IOException;
+
+//external dependencies
+import com.fasterxml.jackson.core.JsonGenerator;
 
 /**
  * Util class to serialize a character contained in another entity.

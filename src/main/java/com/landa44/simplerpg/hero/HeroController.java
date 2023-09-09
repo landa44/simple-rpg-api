@@ -1,7 +1,12 @@
 package com.landa44.simplerpg.hero;
 
+//local dependencies
 import com.landa44.simplerpg.character.Character;
+
+//java dependencies
 import java.util.List;
+
+//spring dependencies
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

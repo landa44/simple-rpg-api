@@ -1,7 +1,13 @@
 package com.landa44.simplerpg.character;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+//local dependencies
 import com.landa44.simplerpg.character.attribute.CharacterAttributes;
+
+//java dependencies
+import java.util.ArrayList;
+import java.util.List;
+
+//external dependencies
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,8 +16,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Character represent all type of entities in the game Ex: hereos and enemies.

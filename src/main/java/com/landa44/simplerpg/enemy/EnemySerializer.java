@@ -1,10 +1,11 @@
 package com.landa44.simplerpg.enemy;
 
+//java dependencies
+import java.io.IOException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.landa44.simplerpg.character.CharacterSerializerUtil;
-import java.io.IOException;
 
 public class EnemySerializer extends JsonSerializer<Enemy> {
     @Override
