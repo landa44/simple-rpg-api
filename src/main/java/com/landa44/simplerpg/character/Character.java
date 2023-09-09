@@ -32,18 +32,20 @@ public class Character {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "character", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CharacterAttributes> attributes = new ArrayList<>();
+    private List<CharacterAttributes> attributes;
 
     public Character() {
     }
 
     public Character(String name) {
         this.name = name;
+        this.attributes = new ArrayList<>();
     }
 
     public Character(Long id, String name) {
         this.id = id;
         this.name = name;
+        this.attributes = new ArrayList<>();
     }
 
     public String getName() {

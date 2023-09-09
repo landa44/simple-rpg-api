@@ -7,7 +7,6 @@ import java.io.IOException;
  * Util class to serialize a character contained in another entity.
  */
 public final class CharacterSerializerUtil {
-
     private CharacterSerializerUtil() {}
 
     /**

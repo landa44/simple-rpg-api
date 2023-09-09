@@ -31,14 +31,10 @@ public class CharacterAttributes {
         generator = "character_attributes_sequence"
     )
     private Long id;
-
     private int value;
-
     @ManyToOne
     @JoinColumn(name = "attribute_id")
     private Attribute attribute;
-
-
     @ManyToOne
     @JoinColumn(name = "character_id")
     private Character character;
