@@ -1,9 +1,6 @@
 package com.landa44.simplerpg.hero;
 
-//local dependencies
-import com.landa44.simplerpg.character.Character;
-
-//external dependencies
+//jakarta dependencies
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -14,6 +11,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+
+//local dependencies
+import com.landa44.simplerpg.character.Character;
 
 /**
  * Hero class represents the playable characters.

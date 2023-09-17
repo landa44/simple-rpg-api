@@ -1,15 +1,15 @@
 package com.landa44.simplerpg.hero;
 
-//local dependencies
-import com.landa44.simplerpg.character.CharacterSerializerUtil;
-
 //java dependencies
 import java.io.IOException;
 
-//external dependencies
+//jackson dependencies
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
+
+//local dependencies
+import com.landa44.simplerpg.character.CharacterSerializerUtil;
 
 public class HeroSerializer extends JsonSerializer<Hero> {
     @Override

@@ -1,9 +1,6 @@
 package com.landa44.simplerpg.enemy;
 
 //local dependencies
-import com.landa44.simplerpg.character.Character;
-
-//local dependencies
 import java.util.List;
 
 //spring dependencies
@@ -15,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+//local dependencies
+import com.landa44.simplerpg.character.Character;
 
 @RestController
 @RequestMapping(path = "rpg/v1/enemies")

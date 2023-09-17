@@ -1,9 +1,5 @@
 package com.landa44.simplerpg.character.attribute;
 
-//local dependencies
-import com.landa44.simplerpg.attribute.Attribute;
-import com.landa44.simplerpg.character.Character;
-
 //external dependencies
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.Column;
@@ -17,6 +13,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+
+//local dependencies
+import com.landa44.simplerpg.attribute.Attribute;
+import com.landa44.simplerpg.character.Character;
 
 /**
  * A class to store the value of the character's attributes.

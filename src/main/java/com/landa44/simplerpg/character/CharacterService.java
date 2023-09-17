@@ -1,16 +1,16 @@
 package com.landa44.simplerpg.character;
 
-//local dependencies
-import com.landa44.simplerpg.attribute.Attribute;
-import com.landa44.simplerpg.character.attribute.CharacterAttributes;
-import com.landa44.simplerpg.character.attribute.CharacterAttributesRepository;
-
 //java dependencies
 import java.util.List;
 
 //spring dependencies
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+//local dependencies
+import com.landa44.simplerpg.attribute.Attribute;
+import com.landa44.simplerpg.character.attribute.CharacterAttributes;
+import com.landa44.simplerpg.character.attribute.CharacterAttributesRepository;
 
 @Service
 public class CharacterService {

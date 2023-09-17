@@ -1,8 +1,5 @@
 package com.landa44.simplerpg.enemy;
 
-//local dependencies
-import com.landa44.simplerpg.character.Character;
-
 //external dependencies
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.CascadeType;
@@ -14,6 +11,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+
+//local dependencies
+import com.landa44.simplerpg.character.Character;
 
 /**
  * Enemy class represents the non-playable characters.
