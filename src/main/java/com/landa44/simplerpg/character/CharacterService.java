@@ -1,6 +1,7 @@
 package com.landa44.simplerpg.character;
 
 //java dependencies
+import com.landa44.simplerpg.character.exception.NullNameException;
 import java.util.List;
 
 //spring dependencies
@@ -28,7 +29,8 @@ public class CharacterService {
         return characterRepository.findAll();
     }
 
-    public void addCharacter(Character character) {
+    public void addCharacter(Character character) throws NullNameException {
+        if(character.getName() == null || character.getName().isBlank()) throw new NullNameException();
         characterRepository.save(character);
         characterAttributesRepository.save(
             new CharacterAttributes(100, Attribute.Live, character)
