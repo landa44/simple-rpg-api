@@ -34,7 +34,5 @@ jobs:
           compose-file: "./docker-compose.yml"
           up-flags: "--remove-orphans"
           down-flags: "--remove-orphans"
-          services: |
-            test-postgres
       - name: Run tests
         run: export JAVA_HOME=$JAVA_HOME_17_X64 && mvn test --file pom.xml
