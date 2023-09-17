@@ -1,6 +1,9 @@
 package com.landa44.simplerpg.character.exception;
 
+//java
 import java.io.IOException;
+
+//external
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

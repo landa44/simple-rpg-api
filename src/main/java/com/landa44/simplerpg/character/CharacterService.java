@@ -1,7 +1,6 @@
 package com.landa44.simplerpg.character;
 
 //java dependencies
-import com.landa44.simplerpg.character.exception.NullNameException;
 import java.util.List;
 
 //spring dependencies
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.landa44.simplerpg.attribute.Attribute;
 import com.landa44.simplerpg.character.attribute.CharacterAttributes;
 import com.landa44.simplerpg.character.attribute.CharacterAttributesRepository;
+import com.landa44.simplerpg.character.exception.NullNameException;
 
 @Service
 public class CharacterService {
@@ -30,7 +30,9 @@ public class CharacterService {
     }
 
     public void addCharacter(Character character) throws NullNameException {
-        if(character.getName() == null || character.getName().isBlank()) throw new NullNameException();
+        if (character.getName() == null || character.getName().isBlank()) {
+            throw new NullNameException();
+        }
         characterRepository.save(character);
         characterAttributesRepository.save(
             new CharacterAttributes(100, Attribute.Live, character)
