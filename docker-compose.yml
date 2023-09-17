@@ -1,5 +1,10 @@
 version: "3.7"
 
+x-test-database-variables: &test-database-variables
+  POSTGRES_DB: testdb
+  POSTGRES_PASSWORD: postgrestest
+  POSTGRES_USER: testuser
+
 x-database-variables: &database-variables
   POSTGRES_DB: ${DB_NAME}
   POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -8,11 +13,19 @@ x-database-variables: &database-variables
 services:
   postgres:
     image: postgres
+    container_name: postgres_default
     ports:
       - "5432:5432"
     environment: *database-variables
     volumes:
       - db-data:/var/lib/postgresql/data
+
+  test-postgres:
+    image: postgres
+    container_name: postgres_test
+    ports:
+      - "5433:5432"
+    environment: *test-database-variables
 
 volumes:
   db-data:
